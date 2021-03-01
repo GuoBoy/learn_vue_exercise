@@ -4,3 +4,9 @@ html, body, #app{
     margin: 0 0;
     padding: 0 0;
 }
+.el-breadcrumb{
+    margin-bottom: 1.5rem;
+}
+.el-table{
+    margin-top: 1.5rem;
+}

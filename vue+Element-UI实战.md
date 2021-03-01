@@ -33,7 +33,8 @@ git checkout branchname -b	// -b 创建新分支并切换到新分支
 // 删除分支
 git branch -d branchname
 // 合并分支
-git merge
+切换到主分支
+git merge 分支名
 `
 ## 提交到github
 `

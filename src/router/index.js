@@ -8,7 +8,12 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+    redirect: '/welcome',
+    children: [
+      { path: '/welcome', component: () => import('../components/Welcome.vue') },
+      { path: '/users', component: () => import('../components/users/Users.vue') }
+    ]
   },
   {
     path: '/login',
@@ -18,6 +23,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     component: () => import('../components/Login.vue')
+  },
+  {
+    path: '*',
+    name: "other",
+    redirect: '/login'
   }
 ]
 
