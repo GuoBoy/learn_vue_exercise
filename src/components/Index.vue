@@ -80,6 +80,10 @@ export default {
 				{
 					id: 3,
 					authName: "商品管理",
+					children: [
+						{ id: 31, authName: "商品列表", path: "/list" },
+						{ id: 32, authName: "商品分类", path: "/categories" },
+					],
 				},
 				{
 					id: 4,

@@ -3,10 +3,11 @@ html, body, #app{
     height: 100%;
     margin: 0 0;
     padding: 0 0;
+    min-width: 1366px;
 }
 .el-breadcrumb{
     margin-bottom: 1.5rem;
 }
-.el-table{
+.el-table, .el-pagination{
     margin-top: 1.5rem;
 }
