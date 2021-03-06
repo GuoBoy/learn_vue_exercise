@@ -11,12 +11,13 @@ const routes = [
     component: Index,
     redirect: '/welcome',
     children: [
-      { path: '/welcome', component: () => import('../components/Welcome.vue') },
-      { path: '/users', component: () => import('../components/users/Users.vue') },
-      { path: "/authority", component: () => import('../components/power/authority.vue') },
-      { path: '/character', component: () => import('../components/power/character.vue') },
-      { path: '/categories', component: () => import('../components/goods/Categories.vue') },
-      { path: '/list', component: () => import('../components/goods/List.vue') }
+      { path: 'welcome', component: () => import('../components/Welcome.vue') },
+      { path: 'users', component: () => import('../components/users/Users.vue') },
+      { path: "authority", component: () => import('../components/power/authority.vue') },
+      { path: 'character', component: () => import('../components/power/character.vue') },
+      { path: 'categories', component: () => import('../components/goods/Categories.vue') },
+      { path: 'list', component: () => import('../components/goods/List.vue') },
+      { path: 'list/add', component: () => import('../components/goods/Add.vue') }
     ]
   },
   {

@@ -21,7 +21,9 @@
 				</el-col>
 				<!-- 添加按钮 -->
 				<el-col :span="12">
-					<el-button type="primary">添加商品</el-button>
+					<el-button type="primary" @click="onAddGoods"
+						>添加商品</el-button
+					>
 				</el-col>
 			</el-row>
 			<!-- 商品列表 -->
@@ -69,6 +71,11 @@ export default {
 			],
 			searchData: "",
 		};
+	},
+	methods: {
+		onAddGoods() {
+			this.$router.push("/list/add");
+		},
 	},
 };
 </script>

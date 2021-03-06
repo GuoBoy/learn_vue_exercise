@@ -5,9 +5,9 @@ html, body, #app{
     padding: 0 0;
     min-width: 1366px;
 }
-.el-breadcrumb{
+.el-breadcrumb, .el-steps{
     margin-bottom: 1.5rem;
 }
-.el-table, .el-pagination{
+.el-table, .el-pagination, .el-steps{
     margin-top: 1.5rem;
 }
