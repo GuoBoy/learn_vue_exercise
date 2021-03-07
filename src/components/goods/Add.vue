@@ -80,24 +80,38 @@
 						</el-form-item>
 					</el-tab-pane>
 					<el-tab-pane label="商品参数" name="1">
-						<!-- <el-form-item label="商品参数">
+						<el-form-item label="商品参数">
 							<el-input
-								v-model="addForm.attrs"
+								v-model="addForm.atts"
 								placeholder="输入商品参数"
 								clearable
 							></el-input>
-						</el-form-item> -->
-						11
+						</el-form-item>
 					</el-tab-pane>
 					<el-tab-pane label="商品属性" name="2"
-						>角色管理</el-tab-pane
+						>商品属性</el-tab-pane
 					>
-					<el-tab-pane label="商品图片" name="3"
-						>定时任务补偿</el-tab-pane
-					>
+					<el-tab-pane label="商品图片" name="3">
+						<el-upload
+							:action="uploadUrl"
+							:on-preview="handlePreview"
+							:on-remove="handleRemove"
+							list-type="picture"
+						>
+							<el-button size="small" type="primary"
+								>点击上传</el-button
+							>
+						</el-upload>
+					</el-tab-pane>
 					<el-tab-pane label="商品内容" name="4"
-						>定时任务补偿</el-tab-pane
-					>
+						><quill-editor v-model="addForm.goods_detail" />
+						<el-button
+							type="primary"
+							class="add-btn"
+							@click="addGoods"
+							>添加商品</el-button
+						>
+					</el-tab-pane>
 				</el-tabs>
 			</el-form>
 		</el-card>
@@ -116,7 +130,8 @@ export default {
 				goods_weight: 0,
 				goods_number: 0,
 				goods_cate: [],
-				attrs,
+				atts: "",
+				goods_detail: "",
 			},
 			addFormRules: {
 				goods_name: [
@@ -169,23 +184,36 @@ export default {
 				label: "name",
 				value: "name",
 			},
+			uploadUrl: "",
 		};
 	},
 	methods: {
 		handleChange() {
-			console.log(this.addForm);
 			if (this.addForm.goods_cate.length != 3) {
 				this.addForm.goods_cate = [];
 			}
 		},
 		beforeTabLeave(toTabName, oldTabName) {
-			console.log(toTabName, oldTabName);
 			if (oldTabName === "0" && this.addForm.goods_cate.length != 3) {
 				// 切换其他tab且未选择商品分类则组织跳转
 				this.$message.error("请先选择商品分类！");
 				return false;
 			}
 		},
+		handlePreview() {},
+		handleRemove() {},
+		addGoods() {
+			this.$refs.addFormRef.validate((valid) => {
+				if (!valid) return this.$message.error("请填写必要信息");
+				// 验证成功，提交信息
+				console.log("提交信息", this.addForm);
+			});
+		},
 	},
 };
 </script>
+<style lang="less" scoped>
+.add-btn {
+	margin-top: 1.5rem;
+}
+</style>

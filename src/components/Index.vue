@@ -88,10 +88,14 @@ export default {
 				{
 					id: 4,
 					authName: "订单管理",
+					children: [{ id: 41, authName: "订单列表", path: "order" }],
 				},
 				{
 					id: 5,
 					authName: "数据统计",
+					children: [
+						{ id: 51, authName: "数据报表", path: "report" },
+					],
 				},
 			],
 			isCollapse: false,

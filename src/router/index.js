@@ -17,7 +17,9 @@ const routes = [
       { path: 'character', component: () => import('../components/power/character.vue') },
       { path: 'categories', component: () => import('../components/goods/Categories.vue') },
       { path: 'list', component: () => import('../components/goods/List.vue') },
-      { path: 'list/add', component: () => import('../components/goods/Add.vue') }
+      { path: 'list/add', component: () => import('../components/goods/Add.vue') },
+      { path: 'order', component: () => import('../components/order/Order.vue') },
+      { path: 'report', component: () => import('../components/report/Report.vue') }
     ]
   },
   {
